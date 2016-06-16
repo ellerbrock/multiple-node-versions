@@ -44,7 +44,7 @@ sudo rm -rf /usr/local/lib/node*
 sudo rm -f /usr/local/bin/npm
 sudo rm -f /usr/local/bin/node
 sudo rm -rf /usr/local/include/node*
-sudo rm -rf /usr/local/share/man/man1/node.1
+sudo rm -f /usr/local/share/man/man1/node.1
 sudo rm -f /var/db/receipts/org.nodejs.*
 sudo rm -rf ~/.npm
 sudo rm -rf ~/.nvm
@@ -107,7 +107,7 @@ or just run `./setup.sh` to walk through the steps ...
 #   Facebook      https://facebook.com/frapsoft
 #   Homepage      https://frapsoft.com
 #
-#   Version       0.0.1
+#   Version       1.0.0
 #
 #
 #   Information
@@ -117,6 +117,7 @@ or just run `./setup.sh` to walk through the steps ...
 
 # Configuration
 # -------------
+
 NVM_URL="https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh "
 BREW_PATH="/usr/local/bin/brew"
 BREW_FOUND=false
@@ -176,7 +177,7 @@ brew_cleanup()
           if [[ $answere == "y" || $answere == "Y" ]]; then
             echo "  => updating and cleaning brew ..."
             brew prune && brew doctor
-            brew update && brew upgrade -g
+            brew update && brew upgrade
           fi
     else
       echo "seems you dont have homebrew installed ..."
@@ -196,7 +197,7 @@ delete_node_folders()
     sudo rm -f /usr/local/bin/npm
     sudo rm -f /usr/local/bin/node
     sudo rm -rf /usr/local/include/node*
-    sudo rm -rf /usr/local/share/man/man1/node.1
+    sudo rm -f /usr/local/share/man/man1/node.1
     sudo rm -f /var/db/receipts/org.nodejs.*
     sudo rm -rf ~/.npm
     sudo rm -rf ~/.nvm
@@ -329,22 +330,16 @@ case "$1" in
   ;;
 esac
 ```
-
 ### Contact / Social Media
 
 *Get the latest News about Web Development, Open Source, Tooling, Server & Security*
 
-[![Twitter](https://github.frapsoft.com/social/twitter.png)](https://twitter.com/frapsoft/)
-[![Facebook](https://github.frapsoft.com/social/facebook.png)](https://www.facebook.com/frapsoft/)
-[![Google+](https://github.frapsoft.com/social/google-plus.png)](https://plus.google.com/116540931335841862774)
-[![Gitter](https://github.frapsoft.com/social/gitter.png)](https://gitter.im/frapsoft/frapsoft/)
-[![Github](https://github.frapsoft.com/social/github.png)](https://github.com/ellerbrock/)
+[![Twitter](https://github.frapsoft.com/social/twitter.png)](https://twitter.com/frapsoft/)[![Facebook](https://github.frapsoft.com/social/facebook.png)](https://www.facebook.com/frapsoft/)[![Google+](https://github.frapsoft.com/social/google-plus.png)](https://plus.google.com/116540931335841862774)[![Gitter](https://github.frapsoft.com/social/gitter.png)](https://gitter.im/frapsoft/frapsoft/)[![Github](https://github.frapsoft.com/social/github.png)](https://github.com/ellerbrock/)
 
-### Development by 
+### Development by
 
 Developer / Author: [Maik Ellerbrock](https://github.com/ellerbrock/)  
 Company: [Frapsoft](https://github.com/frapsoft/)
-
 
 ### License 
 

@@ -21,7 +21,7 @@
 #   Facebook      https://facebook.com/frapsoft
 #   Homepage      https://frapsoft.com
 #
-#   Version       0.0.1
+#   Version       1.0.0
 #
 #
 #   Information
@@ -31,7 +31,6 @@
 
 # Configuration
 # -------------
-{
 
 NVM_URL="https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh "
 BREW_PATH="/usr/local/bin/brew"
@@ -92,7 +91,7 @@ brew_cleanup()
           if [[ $answere == "y" || $answere == "Y" ]]; then
             echo "  => updating and cleaning brew ..."
             brew prune && brew doctor
-            brew update && brew upgrade -g
+            brew update && brew upgrade
           fi
     else
       echo "seems you dont have homebrew installed ..."
@@ -112,7 +111,7 @@ delete_node_folders()
     sudo rm -f /usr/local/bin/npm
     sudo rm -f /usr/local/bin/node
     sudo rm -rf /usr/local/include/node*
-    sudo rm -rf /usr/local/share/man/man1/node.1
+    sudo rm -f /usr/local/share/man/man1/node.1
     sudo rm -f /var/db/receipts/org.nodejs.*
     sudo rm -rf ~/.npm
     sudo rm -rf ~/.nvm
@@ -244,4 +243,3 @@ case "$1" in
     install_modules
   ;;
 esac
-}

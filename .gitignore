@@ -1,5 +1,10 @@
 *~
 *.log
-/init.sh
-template.md
+*.sh
+*.pid
+*.org.md
+.tscache
+/template.md
+/local
 /templates
+/typings
