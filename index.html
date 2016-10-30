@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>multiple node.js versions by ellerbrock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">multiple node.js versions</h1>
+      <h2 class="project-tagline">:honeybee: setup multiple node.js versions via nvm and cleanup old installations</h2>
+      <a href="https://github.com/ellerbrock/multiple-node-versions" class="btn">View on GitHub</a>
+      <a href="https://github.com/ellerbrock/multiple-node-versions/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ellerbrock/multiple-node-versions/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><img src="https://github.frapsoft.com/top/nodejs-logo.png" alt="logo"></p>
+
+<h1>
+<a id="multiple-node-versions--" class="anchor" href="#multiple-node-versions--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Multiple Node Versions <a href="https://github.com/ellerbrock/open-source-badge/"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102" alt="Open Source Love"></a> <a href="https://gitter.im/frapsoft/frapsoft/"><img src="https://badges.gitter.im/frapsoft/frapsoft.svg" alt="Gitter Chat"></a>
+</h1>
+
+<p><strong>Quick and Dirty Setup for the lazy!</strong></p>
+
+<p>Cleanup your old messed up Node.js installation and get you running with a new fresh and funky <a href="https://github.com/creationix/nvm">nvm</a> enviroment with multiple Node Versions on OS X.</p>
+
+<p>You can download the <a href="https://github.com/ellerbrock/multiple-node-versions/blob/master/setup.sh">setup.sh</a> or run the Script directly via:</p>
+
+<p><code>curl -s -L https://raw.githubusercontent.com/ellerbrock/multiple-node-versions/master/setup.sh -o setup.sh; bash setup.sh</code></p>
+
+<p><img src="https://github.frapsoft.com/screenshots/multiple-node-versions.jpg" alt="multiple node versions"></p>
+
+<h2>
+<a id="functionality" class="anchor" href="#functionality" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functionality</h2>
+
+<ul>
+<li>
+<p>find Node versions installed via Homebrew</p>
+
+<ul>
+<li>  uninstall this version?</li>
+</ul>
+</li>
+<li><p>delete old Node, npm and nvm folders?</p></li>
+<li><p>download and install nvm?</p></li>
+<li>
+<p>install Node LTS 4.4.5?</p>
+
+<ul>
+<li>  install node-gyp for this version?</li>
+<li>  install Typescript for this version?</li>
+<li>  install useful Development Tools for this version?</li>
+</ul>
+</li>
+<li>
+<p>install Node latest version?</p>
+
+<ul>
+<li>  install node-gyp for this version?</li>
+<li>  install Typescript for this version?</li>
+<li>  install useful Development Tools for this version?</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="cleanup" class="anchor" href="#cleanup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cleanup</h2>
+
+<div class="highlight highlight-source-shell"><pre>sudo rm -rf /usr/local/lib/node<span class="pl-k">*</span>
+sudo rm -f /usr/local/bin/npm
+sudo rm -f /usr/local/bin/node
+sudo rm -rf /usr/local/include/node<span class="pl-k">*</span>
+sudo rm -f /usr/local/share/man/man1/node.1
+sudo rm -f /var/db/receipts/org.nodejs.<span class="pl-k">*</span>
+sudo rm -rf <span class="pl-k">~</span>/.npm
+sudo rm -rf <span class="pl-k">~</span>/.nvm
+sudo rm -rf <span class="pl-k">~</span>/.node-gyp</pre></div>
+
+<h2>
+<a id="typescript-modules" class="anchor" href="#typescript-modules" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TypeScript Modules</h2>
+
+<ul>
+<li>  <a href="https://www.npmjs.com/package/typescript">TypeScript</a> - TypeScript is a language for application scale JavaScript development</li>
+<li>  <a href="https://www.npmjs.com/package/tslint">tslint</a> - An extensible static analysis linter for the TypeScript language</li>
+<li>  <a href="https://www.npmjs.com/package/typings">typings</a> - The TypeScript Definition Manager.</li>
+</ul>
+
+<h2>
+<a id="development-modules" class="anchor" href="#development-modules" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development Modules</h2>
+
+<ul>
+<li>  <a href="https://www.npmjs.com/package/nodemon">nodemon</a> - Monitor script for development of a node.js app.</li>
+<li>  <a href="https://www.npmjs.com/package/pm2">pm2</a> - Production process manager for Node.JS applications with a built-in load balancer.</li>
+<li>  <a href="https://www.npmjs.com/package/node-inspector">node-inspector</a> - Web Inspector based nodeJS debugger</li>
+<li>  <a href="https://www.npmjs.com/package/npm-check-updates">npm-check-updates</a> - Find newer versions of dependencies than what your package.json or bower.json allows</li>
+<li>  <a href="https://www.npmjs.com/package/np">np</a> - A better npm publish</li>
+<li>  <a href="https://www.npmjs.com/package/npm-name">npm-name</a> - Check whether a package name is available on npm</li>
+</ul>
+
+<p>This script is meant to be a skeleton. Best way to use it is to make a fork and change it for your individual needs with all the modules and versions you prefere. Your very welcome to make a pull request to bring more functionality ...</p>
+
+<h3>
+<a id="optional-parameter" class="anchor" href="#optional-parameter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Optional Parameter</h3>
+
+<ul>
+<li>  <code>setup.sh delnode</code> - run cleanup process</li>
+<li>  <code>setup.sh brewnode</code> - search for node installation via brew with uninstall option</li>
+<li>  <code>setup.sh nvm</code> - download and install nvm</li>
+<li>  <code>setup.sh modules</code> - install npm modules</li>
+<li>  <code>setup.sh nodelts</code> - install Node LTS 4.4.5</li>
+<li>  <code>setup.sh nodelatest</code> - install Node latest version</li>
+</ul>
+
+<p>or just run <code>./setup.sh</code> to walk through the steps ...</p>
+
+<h3>
+<a id="source" class="anchor" href="#source" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Source</h3>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c">#!/usr/bin/env bash</span>
+<span class="pl-c">#</span>
+<span class="pl-c">#   /$$$$$$$$                                                /$$$$$$   /$$</span>
+<span class="pl-c">#  | $$_____/                                               /$$__  $$ | $$</span>
+<span class="pl-c">#  | $$     /$$$$$$  /$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$ | $$  \__//$$$$$$</span>
+<span class="pl-c">#  | $$$$$ /$$__  $$|____  $$ /$$__  $$ /$$_____/ /$$__  $$| $$$$   |_  $$_/</span>
+<span class="pl-c">#  | $$__/| $$  \__/ /$$$$$$$| $$  \ $$|  $$$$$$ | $$  \ $$| $$_/     | $$</span>
+<span class="pl-c">#  | $$   | $$      /$$__  $$| $$  | $$ \____  $$| $$  | $$| $$       | $$ /$$</span>
+<span class="pl-c">#  | $$   | $$     |  $$$$$$$| $$$$$$$/ /$$$$$$$/|  $$$$$$/| $$       |  $$$$/</span>
+<span class="pl-c">#  |__/   |__/      \_______/| $$____/ |_______/  \______/ |__/        \___/</span>
+<span class="pl-c">#                            | $$</span>
+<span class="pl-c">#                            | $$</span>
+<span class="pl-c">#                            |__/</span>
+<span class="pl-c">#</span>
+<span class="pl-c">#   Developer     Maik Ellerbrock</span>
+<span class="pl-c">#   GitHub        https://github.com/ellerbrock</span>
+<span class="pl-c">#</span>
+<span class="pl-c">#   Company       Frapsoft Web Agency</span>
+<span class="pl-c">#</span>
+<span class="pl-c">#   Twitter       https://twitter.com/frapsoft</span>
+<span class="pl-c">#   Facebook      https://facebook.com/frapsoft</span>
+<span class="pl-c">#   Homepage      https://frapsoft.com</span>
+<span class="pl-c">#</span>
+<span class="pl-c">#   Version       1.0.0</span>
+<span class="pl-c">#</span>
+<span class="pl-c">#</span>
+<span class="pl-c">#   Information</span>
+<span class="pl-c">#   -----------</span>
+<span class="pl-c">#   Shell Script to install Node via nvm</span>
+
+
+<span class="pl-c"># Configuration</span>
+<span class="pl-c"># -------------</span>
+
+NVM_URL=<span class="pl-s"><span class="pl-pds">"</span>https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh <span class="pl-pds">"</span></span>
+BREW_PATH=<span class="pl-s"><span class="pl-pds">"</span>/usr/local/bin/brew<span class="pl-pds">"</span></span>
+BREW_FOUND=<span class="pl-c1">false</span>
+NVM_LOADED=<span class="pl-c1">false</span>
+
+<span class="pl-c"># Functions</span>
+<span class="pl-c"># ---------</span>
+
+<span class="pl-en">ascii_font</span>()
+{
+clear
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>                              $$\<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>                              $$ |<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>    $$$$$$$\   $$$$$$\   $$$$$$$ | $$$$$$\      $$\  $$$$$$$\<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>    $$  __$$\ $$  __$$\ $$  __$$ |$$  __$$\     \__|$$  _____|<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>    $$ |  $$ |$$ /  $$ |$$ /  $$ |$$$$$$$$ |    $$\ \$$$$$$\<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>    $$ |  $$ |$$ |  $$ |$$ |  $$ |$$   ____|    $$ | \____$$\<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>    $$ |  $$ |\$$$$$$  |\$$$$$$$ |\$$$$$$$\ $$\ $$ |$$$$$$$  |<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>    \__|  \__| \______/  \_______| \_______|\__|$$ |\_______/<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>                                          $$\   $$ |<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>                                          \$$$$$$  |<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>                                           \______/<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>Quick and Dirty Node.js Setup via nvm<span class="pl-pds">'</span></span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>=====================================<span class="pl-pds">'</span></span>
+}
+
+
+<span class="pl-en">brew_cleanup</span>()
+{
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-c1">read</span> -p <span class="pl-s"><span class="pl-pds">"</span>search for brew node versions? (y/n) <span class="pl-pds">"</span></span> -n 1 answere
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-k">if</span> [[ <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-k">||</span> <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span> ]]<span class="pl-k">;</span> <span class="pl-k">then</span>
+    <span class="pl-k">if</span> [ <span class="pl-k">-x</span> <span class="pl-smi">$BREW_PATH</span> ]<span class="pl-k">;</span> <span class="pl-k">then</span>
+      <span class="pl-k">for</span> <span class="pl-smi">ver</span> <span class="pl-k">in</span> <span class="pl-s"><span class="pl-pds">`</span>brew list -1 <span class="pl-k">|</span> grep ^node<span class="pl-pds">`</span></span>
+        <span class="pl-k">do</span>
+          BREW_FOUND=<span class="pl-c1">true</span>
+          <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+          <span class="pl-c1">read</span> -p <span class="pl-s"><span class="pl-pds">"</span>uninstall <span class="pl-smi">$ver</span>?? (y/n) <span class="pl-pds">"</span></span> -n 1 answere
+          <span class="pl-k">if</span> [[ <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-k">||</span> <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span> ]]<span class="pl-k">;</span> <span class="pl-k">then</span>
+            <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+            <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>  =&gt; uninstalling <span class="pl-smi">$ver</span><span class="pl-pds">"</span></span>
+            brew uninstall <span class="pl-smi">$ver</span>
+          <span class="pl-k">fi</span>
+        <span class="pl-k">done</span>
+
+        <span class="pl-k">if</span> [ <span class="pl-smi">$BREW_FOUND</span> <span class="pl-k">==</span> <span class="pl-c1">false</span> ]<span class="pl-k">;</span> <span class="pl-k">then</span>
+          <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+          <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>  =&gt; no node version installed with homebrew<span class="pl-pds">"</span></span>
+        <span class="pl-k">fi</span>
+
+        <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+        <span class="pl-c1">read</span> -p <span class="pl-s"><span class="pl-pds">"</span>update and cleanup brew? (y/n) <span class="pl-pds">"</span></span> -n 1 answere
+        <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+          <span class="pl-k">if</span> [[ <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-k">||</span> <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span> ]]<span class="pl-k">;</span> <span class="pl-k">then</span>
+            <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>  =&gt; updating and cleaning brew ...<span class="pl-pds">"</span></span>
+            brew prune <span class="pl-k">&amp;&amp;</span> brew doctor
+            brew update <span class="pl-k">&amp;&amp;</span> brew upgrade
+          <span class="pl-k">fi</span>
+    <span class="pl-k">else</span>
+      <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>seems you dont have homebrew installed ...<span class="pl-pds">"</span></span>
+    <span class="pl-k">fi</span>
+  <span class="pl-k">fi</span>
+}
+
+
+<span class="pl-en">delete_node_folders</span>()
+{
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-c1">read</span> -p <span class="pl-s"><span class="pl-pds">"</span>delete node, npm and nvm folders? (y/n) <span class="pl-pds">"</span></span> -n 1 answere
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-k">if</span> [[ <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-k">||</span> <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span> ]]<span class="pl-k">;</span> <span class="pl-k">then</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>  =&gt; deleting folders ...<span class="pl-pds">"</span></span>
+    sudo rm -rf /usr/local/lib/node<span class="pl-k">*</span>
+    sudo rm -f /usr/local/bin/npm
+    sudo rm -f /usr/local/bin/node
+    sudo rm -rf /usr/local/include/node<span class="pl-k">*</span>
+    sudo rm -f /usr/local/share/man/man1/node.1
+    sudo rm -f /var/db/receipts/org.nodejs.<span class="pl-k">*</span>
+    sudo rm -rf <span class="pl-k">~</span>/.npm
+    sudo rm -rf <span class="pl-k">~</span>/.nvm
+    sudo rm -rf <span class="pl-k">~</span>/.node-gyp
+  <span class="pl-k">fi</span>
+}
+
+
+<span class="pl-en">install_nvm</span>()
+{
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-c1">read</span> -p <span class="pl-s"><span class="pl-pds">"</span>install nvm? (y/n) <span class="pl-pds">"</span></span> -n 1 answere
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-k">if</span> [[ <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-k">||</span> <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span> ]]<span class="pl-k">;</span> <span class="pl-k">then</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>  =&gt; installing nvm ...<span class="pl-pds">"</span></span>
+    curl -o- <span class="pl-smi">$NVM_URL</span><span class="pl-k">|</span> bash
+    set_nvm_env
+  <span class="pl-k">fi</span>
+}
+
+
+<span class="pl-en">install_node_lts</span>()
+{
+  <span class="pl-c1">test</span> <span class="pl-smi">$NVM_LOADED</span> <span class="pl-k">||</span> set_nvm_env
+
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-c1">read</span> -p <span class="pl-s"><span class="pl-pds">"</span>install node 4.4.5 lts? (y/n) <span class="pl-pds">"</span></span> -n 1 answere
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-k">if</span> [[ <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-k">||</span> <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span> ]]<span class="pl-k">;</span> <span class="pl-k">then</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>  =&gt; installing node lts ...<span class="pl-pds">"</span></span>
+    nvm install 4.4.5
+    nvm <span class="pl-c1">alias</span> lts 4.4.5
+    nvm use lts
+    npm update <span class="pl-k">&amp;&amp;</span> npm upgrade -g
+  <span class="pl-k">fi</span>
+}
+
+
+<span class="pl-en">install_node_latest</span>()
+{
+  <span class="pl-c1">test</span> <span class="pl-smi">$NVM_LOADED</span> <span class="pl-k">||</span> set_nvm_env
+
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-c1">read</span> -p <span class="pl-s"><span class="pl-pds">"</span>install node latest version? (y/n) <span class="pl-pds">"</span></span> -n 1 answere
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-k">if</span> [[ <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-k">||</span> <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span> ]]<span class="pl-k">;</span> <span class="pl-k">then</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>  =&gt; installing node latest ...<span class="pl-pds">"</span></span>
+    nvm install node
+    nvm <span class="pl-c1">alias</span> default node
+    nvm <span class="pl-c1">alias</span> latest node
+    nvm <span class="pl-c1">alias</span> latest node
+    nvm use node
+    npm update <span class="pl-k">&amp;&amp;</span> npm upgrade -g
+  <span class="pl-k">fi</span>
+}
+
+
+<span class="pl-en">install_modules</span>()
+{
+  <span class="pl-c1">test</span> <span class="pl-smi">$NVM_LOADED</span> <span class="pl-k">||</span> set_nvm_env
+  ver=<span class="pl-s"><span class="pl-pds">`</span>nvm current<span class="pl-pds">`</span></span>
+
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-c1">read</span> -p <span class="pl-s"><span class="pl-pds">"</span>install node-gyp for node <span class="pl-smi">$ver</span>? (y/n) <span class="pl-pds">"</span></span> -n 1 answere
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-k">if</span> [[ <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-k">||</span> <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span> ]]<span class="pl-k">;</span> <span class="pl-k">then</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>  =&gt; installing node-gyp for node version <span class="pl-smi">$ver</span> ...<span class="pl-pds">"</span></span>
+    npm i -g node-gyp
+  <span class="pl-k">fi</span>
+
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-c1">read</span> -p <span class="pl-s"><span class="pl-pds">"</span>install some useful development tools for node <span class="pl-smi">$ver</span>? (y/n) <span class="pl-pds">"</span></span> -n 1 answere
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-k">if</span> [[ <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-k">||</span> <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span> ]]<span class="pl-k">;</span> <span class="pl-k">then</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>  =&gt; installing developer modules for node <span class="pl-smi">$ver</span> ...<span class="pl-pds">"</span></span>
+    npm i -g npm-check-updates np npm-name nodemon pm2 node-inspector
+  <span class="pl-k">fi</span>
+
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-c1">read</span> -p <span class="pl-s"><span class="pl-pds">"</span>install typescript for node <span class="pl-smi">$ver</span>? (y/n) <span class="pl-pds">"</span></span> -n 1 answere
+  <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>
+  <span class="pl-k">if</span> [[ <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> <span class="pl-k">||</span> <span class="pl-smi">$answere</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span> ]]<span class="pl-k">;</span> <span class="pl-k">then</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>  =&gt; installing typescript for node version <span class="pl-smi">$ver</span> ...<span class="pl-pds">"</span></span>
+    npm i -g typescript@next tslint@next typings
+  <span class="pl-k">fi</span>
+}
+
+
+<span class="pl-en">set_nvm_env</span>()
+{
+  <span class="pl-k">if</span> [ <span class="pl-k">-f</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$NVM_DIR</span>/nvm.sh<span class="pl-pds">"</span></span> ]<span class="pl-k">;</span> <span class="pl-k">then</span>
+    <span class="pl-c1">source</span> <span class="pl-smi">$NVM_DIR</span>/nvm.sh
+    NVM_LOADED=<span class="pl-c1">true</span>
+  <span class="pl-k">else</span>
+    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>cant load the nvm enviroment. is nvm installed?<span class="pl-pds">"</span></span>
+  <span class="pl-k">fi</span>
+}
+
+<span class="pl-c"># run script</span>
+ascii_font
+
+<span class="pl-k">case</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$1</span><span class="pl-pds">"</span></span> in
+  delnode)
+    delete_node_folders
+  ;;
+  brewnode)
+    brew_cleanup
+  ;;
+  nvm)
+    install_nvm
+  ;;
+  modules)
+    install_modules
+  ;;
+  nodelts)
+    install_node_lts
+  ;;
+  nodelatest)
+    install_node_latest
+  ;;
+  <span class="pl-k">*</span>)
+    set_nvm_env
+    brew_cleanup
+    delete_node_folders
+    install_nvm
+    install_node_lts
+    install_modules
+    install_node_latest
+    install_modules
+  ;;
+<span class="pl-k">esac</span></pre></div>
+
+<h3>
+<a id="contact--social-media" class="anchor" href="#contact--social-media" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact / Social Media</h3>
+
+<p><em>Get the latest News about Web Development, Open Source, Tooling, Server &amp; Security</em></p>
+
+<p><a href="https://twitter.com/frapsoft/"><img src="https://github.frapsoft.com/social/twitter.png" alt="Twitter"></a><a href="https://www.facebook.com/frapsoft/"><img src="https://github.frapsoft.com/social/facebook.png" alt="Facebook"></a><a href="https://plus.google.com/116540931335841862774"><img src="https://github.frapsoft.com/social/google-plus.png" alt="Google+"></a><a href="https://gitter.im/frapsoft/frapsoft/"><img src="https://github.frapsoft.com/social/gitter.png" alt="Gitter"></a><a href="https://github.com/ellerbrock/"><img src="https://github.frapsoft.com/social/github.png" alt="Github"></a></p>
+
+<h3>
+<a id="development-by" class="anchor" href="#development-by" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development by</h3>
+
+<p>Developer / Author: <a href="https://github.com/ellerbrock/">Maik Ellerbrock</a><br>
+Company: <a href="https://github.com/frapsoft/">Frapsoft</a></p>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
+
+<p>Copyright (c) 2016 <a href="https://github.com/ellerbrock/">Maik Ellerbrock</a>  </p>
+
+<p><a href="https://opensource.org/licenses/mit-license.php"><img src="https://badges.frapsoft.com/os/mit/mit-125x28.png?v=102" alt="MIT Licence"></a>  </p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ellerbrock/multiple-node-versions">multiple node.js versions</a> is maintained by <a href="https://github.com/ellerbrock">ellerbrock</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
